@@ -1,5 +1,8 @@
+trigger:
+- master
+
 pool:
- vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-latest'
 jobs:
 - job: job1
   steps:
@@ -19,4 +22,11 @@ jobs:
   dependsOn: job2
   steps:
   - script: echo Job3
+    displayName: 'Run a one-line script'
+- job: job4
+  dependsOn:
+  - job2
+  - job3
+  steps:
+  - script: echo Job 4
     displayName: 'Run a one-line script'
