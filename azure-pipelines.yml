@@ -23,10 +23,11 @@ stages:
       - bash: python --version
       - bash: mvn -version
       - bash: ls -R $(Build.ArtifactStagingDirectory)
--  task: CopyFiles@2
+- task: CopyFiles@2
   inputs:
-    SourceFolder: 'System.DefaultWorkingDirectory'
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
     Contents: |
+      **
       **/*.yml
       **/*.java
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
