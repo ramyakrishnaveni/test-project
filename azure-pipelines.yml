@@ -27,7 +27,6 @@ stages:
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)'
     Contents: |
-      **
       **/*.yml
       **/*.java
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
